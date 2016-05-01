@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="login" class="henu.action.DemoAction">
+            <result name="admin" type="redirect">
+                       /teacher/index.jsp
+            </result>
+            <result name="teacher" type="redirect">
+                       /teacher/index.jsp
+            </result>
+            <result name="student" type="redirect">
+                       /student/index.jsp
+            </result>
+            <result name="error" type="redirect">
+                       
+                       login.jsp
+            </result>
+        </action>
+        <action name="downFile" class="henu.action.DownloadFileAction">
+			<result name="success" type="stream">
+				<!-- 指定下载文件入口方法中参数的名字- -->
+				<param name="inputName">target</param>
+				<!-- 制定文件下载的类型 ，文件mine类型都在web.xml中 -->
+				<param name="contentType">text/plain</param>
+				<!-- 制定缓冲区的大小 -->
+				<param name="bufferSize">4096</param>
+				<!-- 指定下载时候的文件名 -->
+				<param name="contentDisposition">attachment;fileName=${resName}</param>
+			</result>
+		</action>
+		
+		
+    </package>
+
+   <include file="onlineCommunication.xml"></include>
+   <include file="upload.xml"></include>
+   <include file="upload2.xml"></include>
+   <include file="Teacher.xml"></include>
+   <include file="notice.xml"></include>
+   <include file="teacherinfo.xml"></include>
+   <include file="student.xml"></include>
+   <include file="studentt.xml"></include>
+   <include file="fileManage.xml"></include>
+   <include file="announce.xml"></include>
+   <include file="studentmanage.xml"></include>
+   <include file="timelimit.xml"></include>
+   <include file="loginPageNews.xml"></include>
+   <include file="paperstate.xml"></include>
+   <include file="automatic.xml"></include>
+</struts>

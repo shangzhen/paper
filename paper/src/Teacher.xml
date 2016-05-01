@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="paper" namespace="/teacher" extends="struts-default">
+		<!-- 从zby文件夹里面登陆，成功后跳转到teacher的index.jsp里面 -->
+		<action name="layout_*" class="henu.action.TeacherManageAction"
+			method="{1}">
+			<result name="findByTeacher">
+				/teacher/layout.jsp
+			</result>
+		</action>
+		<!-- 开题报告表 -->
+		<action name="open_*" class="henu.action.TeacherOpenReportAction"
+			method="{1}">
+			<result name="findByFno">
+				fopen_report1.jsp
+			</result>
+		</action>
+		<!-- 任务表 -->
+		<action name="task_*" class="henu.action.TeacherTaskAction"
+			method="{1}">
+			<result name="findByfid">
+				fopen_report2.jsp
+			</result>
+		</action>
+		<!-- 中期检查表 -->
+		<action name="check_*" class="henu.action.TeacherCheckAction"
+			method="{1}">
+			<result name="findByfNo">
+				fopen_report3.jsp
+			</result>
+		</action>
+		<!-- 学生论文-->
+		<action name="paper_*" class="henu.action.StudentPaperAction"
+			method="{1}">
+			<result name="findByfNoDesc">
+				fopen_report4.jsp
+			</result>
+		</action>
+		<!-- 学生论文删除记录 -->
+		<!-- <action name="paperdelete" class="henu.action.StudentPaperAction"
+			method="paperdelete">
+			<result name="paperdelete">
+				${url}
+			</result>
+		</action> -->
+		
+		<!-- 学生论文查看 -->
+		<action name="papersearch" class="henu.action.StudentPaperAction"
+			method="papersearch">
+			<result name="papersearch">/teacher/searchpaper.jsp</result>
+		</action>
+		<!-- 教师批改论文上传 -->
+		<action name="paperupload" class="henu.action.StudentPaperAction" method="paperupload">
+			<result name="paperupload">/teacher/ajax.jsp</result>
+		</action>
+		<!-- 教师批改信息添加 -->
+		<action name="paperadd" class="henu.action.StudentPaperAction" method="paperadd">
+			<result name="paperadd">/teacher/ajax.jsp</result>
+		</action>
+		
+		
+		
+		
+		<!-- 指导教师评定 -->
+		<action name="ShowStuList" class="henu.action.ReviewPapersAction" method="ShowStuList">
+ 			<result name="show">/teacher/layout1.jsp</result>
+ 		</action>
+ 		<!-- 评阅教师评定 -->
+		<action name="ShowStuList1" class="henu.action.ReviewPapersAction" method="ShowStuList1">
+ 			<result name="show">/teacher/layout11.jsp</result>
+ 		</action>
+ 		<!-- 答辩教师评定 -->
+ 		<action name="ShowStuPaperList" class="henu.action.ReviewPapersAction" method="ShowStuPaperList">
+ 			<result name="show">/teacher/layout2.jsp</result>
+ 		</action>
+ 		<!-- 查询学生得分 -->
+ 		<action name="searchscore" class="henu.action.ReviewPapersAction" method="searchscore">
+ 			<result name="searchscore">/teacher/pingding3.jsp</result>
+ 		</action>
+ 		
+ 		<!-- 输入答辩成绩 -->
+ 		<action name="add2" class="henu.action.ReviewPapersAction" method="add2">
+ 			<result name="add2">/teacher/ajaxDone.html</result>
+ 		</action>
+ 		
+ 		<!-- 弹窗设置 -->
+		<action name="user_add" class="henu.action.ReviewPapersAction" method="add">
+            <result name="add">/teacher/ajaxDone.html</result>
+            <result name="success">/index.html</result>
+        </action>
+        <action name="user_add1" class="henu.action.ReviewPapersAction" method="add1">
+            <result name="add1">/teacher/ajaxDone.html</result>
+            <result name="success">/index.html</result>
+        </action>
+        <action name="user_add2" class="henu.action.ReviewPapersAction" method="add2">
+            <result name="add2">/teacher/ajaxDone.html</result>
+            <result name="success">/index.html</result>
+        </action>
+        
+        <action name="pingyu1" class="henu.action.ReviewPapersAction" method="pingyu1">
+            <result name="pingyu1">/teacher/pingyu1.jsp</result>
+            <result name="success">/index.html</result>
+        </action>
+        
+        <action name="pingyu2" class="henu.action.ReviewPapersAction" method="pingyu2">
+            <result name="pingyu2">/teacher/pingyu2.jsp</result>
+            <result name="success">/index.html</result>
+        </action>
+        
+        <action name="pingyu3" class="henu.action.ReviewPapersAction" method="pingyu3">
+            <result name="pingyu3">/teacher/pingyu3.jsp</result>
+            <result name="success">/index.html</result>
+        </action>
+        
+        <action name="addpingyu" class="henu.action.ReviewPapersAction" method="addpingyu">
+            <result name="addpingyu">/teacher/ajaxDone.html</result>
+            <result name="success">/index.html</result>
+        </action>
+        <action name="addpingyu1" class="henu.action.ReviewPapersAction" method="addpingyu1">
+            <result name="addpingyu1">/teacher/ajaxDone.html</result>
+            <result name="success">/index.html</result>
+        </action>
+        <action name="addpingyu2" class="henu.action.ReviewPapersAction" method="addpingyu2">
+            <result name="addpingyu2">/teacher/ajaxDone.html</result>
+            <result name="success">/index.html</result>
+        </action>
+        <action name="findmessage1" class="henu.action.ReviewPapersAction" method="findmessage1">
+            <result name="findmessage1">/teacher/pingyu11.jsp</result>
+            <result name="error">/index.html</result>
+        </action>
+        <action name="findmessage2" class="henu.action.ReviewPapersAction" method="findmessage2">
+            <result name="findmessage2">/teacher/pingyu22.jsp</result>
+            <result name="error">/index.html</result>
+        </action>
+        <action name="findmessage3" class="henu.action.ReviewPapersAction" method="findmessage3">
+            <result name="findmessage3">/teacher/pingyu33.jsp</result>
+            <result name="error">/index.html</result>
+        </action>
+        <action name="addpingyu1" class="henu.action.ReviewPapersAction" method="addpingyu1">
+            <result name="addpingyu1">/teacher/ajaxDone.html</result>
+            <result name="success">/index.html</result>
+        </action>
+        
+
+        <!-- 论文评审 论文下载 -->
+        <action name="downloadfile" class="henu.action.ReviewPapersAction">
+        	<result name="success" type="stream">
+				<!-- 指定下载文件入口方法中参数的名字- -->
+				<param name="inputName">inputStream</param>
+				<!-- 制定文件下载的类型 ，文件mine类型都在web.xml中 -->
+				<param name="contentType">text/plain</param>
+				<!-- 制定缓冲区的大小 -->
+				<param name="bufferSize">4096</param>
+				<!-- 指定下载时候的文件名 -->
+				<param name="contentDisposition">attachment;fileName=${downloadFileName}</param>
+			</result>
+        </action>
+        
+	</package>
+
+
+
+
+</struts>

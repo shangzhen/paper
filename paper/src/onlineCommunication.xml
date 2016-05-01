@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="communication" namespace="/stu" extends="struts-default">
+        <action name="noticeInformation_findProperty" class="henu.action.NoticeInformationAction" method="findProperty">
+            <result>
+               /student/notice_information.jsp
+            </result>
+        </action>
+        <action name="noticeInformation_find" class="henu.action.NoticeInformationAction" method="find">
+            <result>
+               /student/announcement_see.jsp
+            </result>
+        </action>
+        <action name="consultation_findListBySid" class="henu.action.ConsultationAction" method="findListBySid">
+            <result>
+               /student/online_consultation.jsp
+            </result>
+        </action>
+         <action name="consultation_findAllOut" class="henu.action.ConsultationAction" method="findAllOut">
+            <result>
+               /student/online_message.jsp
+            </result>
+        </action>
+        <action name="consultation_delete" class="henu.action.ConsultationAction" method="delete">
+            <result>
+               /student/ajax.jsp
+            </result>
+        </action>
+         <action name="consultation_add" class="henu.action.ConsultationAction" method="add">
+            <result>           
+           /student/ajax.jsp 
+            </result>
+        </action>
+         <action name="consultation_findByfNo" class="henu.action.ConsultationAction" method="findByfNo">
+            <result>
+               /student/consultation_add.jsp
+            </result>
+        </action>
+    </package>
+	<package name="communication2" namespace="/teacher" extends="struts-default">
+   		<action name="noticeInformation_findByTeacherProperty" class="henu.action.ConsultationAction" method="findByTeacherProperty">
+            <result>
+               /teacher/online_consultation.jsp
+            </result>
+        </action>
+   		<action name="noticeInformation_findByTeacherFid" class="henu.action.ConsultationAction" method="findByTeacherFid">
+            <result>
+               /teacher/online_message_update.jsp
+            </result>
+        </action>
+        <action name="noticeInformation_updateMessage" class="henu.action.ConsultationAction" method="updateMessage">
+            <result>
+               /teacher/ajax.jsp
+            </result>
+        </action>
+        <action name="noticeInformation_deleteMessage" class="henu.action.ConsultationAction" method="deleteMessage">
+            <result>
+               /teacher/ajax.jsp
+            </result>
+        </action>
+        <action name="consultation_findTeacherAllOut" class="henu.action.ConsultationAction" method="findTeacherAllOut">
+            <result>
+               /teacher/online_message.jsp
+            </result>
+        </action>
+        
+        <action name="noticeInformation_findByTeacherFidAlready" class="henu.action.ConsultationAction" method="findByTeacherFidAlready">
+            <result>
+               /teacher/online_message_change.jsp
+            </result>
+        </action>
+        
+        <action name="noticeInformation_deleteMessageAlready" class="henu.action.ConsultationAction" method="deleteMessageAlready">
+            <result>
+               /teacher/ajax.jsp
+            </result>
+        </action>
+        <action name="noticeInformation_changeMessage" class="henu.action.ConsultationAction" method="changeMessage">
+            <result>
+               /teacher/ajax.jsp
+            </result>
+        </action>
+	</package>
+
+</struts>

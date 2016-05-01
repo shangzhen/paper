@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+     <package name="s111" namespace="/student" extends="struts-default">
+		<action name="students_*" class="henu.action.StudentManageAction" method="{1}">
+		   <result>${url}</result>
+		</action>
+		
+		
+		<action name="paper_*" class="henu.action.StudentPaperAction" method="{1}">
+		   <!-- <result>${url}</result> -->
+		   <result name="add">
+		    /student/fopen_report4.jsp
+		   </result>
+		   <result name="upload11">
+		    /student/Student_ThesisAdjunct.jsp
+		   </result>
+		    <result name="upload12">
+		    /student/Student_PptAdjunct.jsp
+		   </result>
+		    <result name="upload13">
+		    /student/Student_CheckAdjunct.jsp
+		   </result>
+		    <result name="upload14">
+		    /student/Student_SourceCodeAdjunct.jsp
+		   </result>
+		    <result name="upload1">
+		   /student/index.jsp
+		   </result>
+		    <result name="upload2">
+		   /student/index.jsp
+		   </result>
+		    <result name="upload3">
+		   /student/index.jsp
+		   </result>
+		    <result name="upload4">
+		   /student/index.jsp
+		   </result>
+		   <result name="findByFno">
+		    /student/fopen_report4.jsp
+		   </result>
+		    <result name="delete">
+		    /student/ajax.jsp
+		   </result>
+		   <result name="findByid">
+		    /student/papers_View.jsp
+		   </result>
+		   
+		   <result name="findfno">
+		    /student/papers_Upload.jsp
+		   </result>
+		</action>
+		<!-- <action name="S_lunwenupload" class="henu.action.lunwenupload" >
+		   <result>
+		    /student/papers_Upload.jsp
+		   </result>
+		</action> -->
+		<action name="student_*" class="henu.action.PaperScoreAction" method="{1}">
+		   <result name="paperscore">/student/paper_score.jsp</result>
+		</action>
+		<action name="student_papermessage" class="henu.action.PaperScoreAction" method="papermessage">
+		   <result name="papermessage">/student/ScorePage.jsp</result>
+		</action>
+	</package>
+    
+   </struts>

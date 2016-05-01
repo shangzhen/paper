@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+
+    <package name="zby" namespace="/student" extends="struts-default">
+
+       <!-- 开题报告表 -->
+		<action name="op_*" class="henu.action.TeacherOpenReportAction"
+			method="{1}">
+			<result>
+				${url}
+			</result>
+		</action>
+		
+		<!-- 任务表 -->
+		<action name="ta_*" class="henu.action.TeacherTaskAction"
+			method="{1}">
+			<result>
+				${url}
+			</result>
+		</action>
+		<!-- 中期检查表 -->
+		<action name="che_*" class="henu.action.TeacherCheckAction"
+			method="{1}">
+			<result>
+				${url}
+			</result>
+		</action>
+		
+    </package>
+
+</struts>
