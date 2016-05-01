@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+
+.mypage{
+	width:1000px;
+	height:600px;
+	padding:20px;
+	
+}
+
+.myteacher{
+	
+	width:420px;
+	height:220px;
+	text-align:center;
+	border:1px solid powderblue;
+	background-color:powderblue;
+	float:left;
+	padding:20px;
+}
+
+.in{
+	width:420px;
+	height:200px;
+	border:1px solid powderblue;
+	background-color:honeydew;
+	text-align:left;
+	margin-top:20px;
+}
+
+
+
+
+.clear{
+	clear:both;
+}
+
+.mypaper{
+	
+	width:420px;
+	height:220px;
+	padding:20px;
+	border:1px solid powderblue;
+	text-align:center;
+	float:right;
+	margin-right:30px;
+	background-color:powderblue;
+}
+
+.myresults{
+	
+	width:420px;
+	height:220px;
+	padding:20px;
+	border:1px solid powderblue;
+	text-align:center;
+	float:left;
+	margin-top:30px;
+	background-color:powderblue;
+}
+
+
+.others{
+	
+	width:420px;
+	height:220px;
+	padding:20px;
+	border:1px solid powderblue;
+	text-align:center;
+	float:right;
+	margin-top:30px;
+	background-color:powderblue;
+	margin-right:30px;
+}

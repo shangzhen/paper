@@ -1,0 +1,25 @@
+#announcement {
+	
+}
+.title{
+	width:500px;
+	height:30px;
+	color: #FFFFFF;
+	font-size: 27px;
+	text-align:center;
+	margin: 0 auto;
+}
+.infomation{
+	width:500px;
+	height:30px;
+	color: #FFFFFF;
+	text-align:center;
+	margin: 0 auto;
+	
+}
+.content{
+	width:900px;
+	height:550px;
+	color: #FFFFFF;
+	margin: 0 auto;
+}

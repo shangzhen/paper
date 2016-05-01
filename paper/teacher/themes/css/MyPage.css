@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+.mypage{
+	width:1000px;
+	height:600px;
+	padding:20px;
+	
+	
+	
+}
+
+.news{
+	
+	width:800px;
+	height:220px;
+	padding:20px;
+	border:1px solid powderblue;
+	text-align:center;
+	
+	
+}
+
+
+
+
+.Spaper{
+	
+	width:800px;
+	height:220px;
+	padding:20px;
+	border:1px solid powderblue;
+	text-align:center;
+	margin-top:30px;
+	
+}
